@@ -4,6 +4,7 @@ from models.both.mlp import MLP
 from models.classification.lenet import LeNet
 from models.classification.nin import NiN
 from models.classification.googlenet import GoogLeNet
+from models.classification.resnet import get_resnet_model
 
 
 def load_model(model_name, input_size, output_size, task_type="regression"):
@@ -20,5 +21,7 @@ def load_model(model_name, input_size, output_size, task_type="regression"):
         return NiN(input_size=input_size, output_size=output_size)
     elif model_name == "GoogLeNet":
         return GoogLeNet(input_size=input_size, output_size=output_size)
+    elif "ResNet" in model_name:
+        return get_resnet_model(model_name, input_size, output_size)
     else:
         raise ValueError(f"Unknown model name: {model_name}")

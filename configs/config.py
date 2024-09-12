@@ -8,11 +8,9 @@ class Config:
     DATA_DIR = "./data"
     # {
     # "FashionMNIST", 28x28 out: 10
-    # "MNIST", in: 28x28 out: 10
     # "Iris", in: 4 out: 3
-    # "CaliforniaHousing" in: 8 out: 1
-    # "Wine" in: 13 out: 3
     # "Digits" in: 8x8 out: 10
+    # "BreastCancer" in: 30 out: 2
     # }
     DATASET_NAME = "FashionMNIST"
     BATCH_SIZE = 64
@@ -26,9 +24,10 @@ class Config:
     # "LeNet"
     # "NiN"
     # "GoogLeNet"
+    # "ResNet" 18 34 50 101 152
     # }
-    MODEL_NAME = "GoogLeNet"
-    INPUT_SIZE = (1, 28, 28)  # 输入图像的尺寸 (channels, height, width)
+    MODEL_NAME = "ResNet18"
+    INPUT_SIZE = (1, 28, 28)  # 输入尺寸 (channels, height, width)
     OUTPUT_SIZE = 10  # 分类数或回归任务的输出维度
 
     # 任务类型
